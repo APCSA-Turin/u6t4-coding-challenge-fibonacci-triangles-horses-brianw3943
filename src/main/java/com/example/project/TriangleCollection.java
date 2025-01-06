@@ -28,20 +28,28 @@ public class TriangleCollection {
   
     // PRECONDITION: numTriangles >= 2
     public TriangleCollection(int numTriangles, int startX, int startY) {
-      /* IMPLEMENT ME */
+      for (int i = 0; i < numTriangles; i++) {
+        collection[i] = new Triangle(new Point(-startX, 0), new Point(0, startY), new Point(startX - i, 0));
+      }
     }
   
     // Calculate and return the sum of the perimeters of
     // all Triangles in the collection
     public double totalPerimeter() {
-      /* IMPLEMENT ME */
+      double perimeter = 0;
+      for (Triangle triangle : collection) {
+        perimeter += triangle.perimeter();
+      }
+      return perimeter;
     }
   
     // adds increment to both the x and y coordinates of each of the
     // three Points in every Triangle in the collections array
     // ADD GETTER AND SETTER METHODS TO OTHER CLASSES AS NECESSARY
     public void shiftTriangles(int increment) {
-      /* IMPLEMENT ME */
+      for (int i = 0; i < collection.length; i++) {
+        collection[i].setVertices(new Point(Point.set + increment, ), , );
+      }
     }
   
     // returns a String that contains each Triangle in the 
