@@ -53,7 +53,7 @@ public class TriangleCollection {
     // ADD GETTER AND SETTER METHODS TO OTHER CLASSES AS NECESSARY
     public void shiftTriangles(int increment) {
       for (int i = 0; i < collection.length; i++) {
-        collection[i].setVertices(-startX + 3, 3, 3, startY + 3, startX - i + 3, 3);
+        collection[i].setVertices(-startX + increment, increment, increment, startY + increment, startX - i + increment, increment);
       }
     }
   
@@ -66,10 +66,11 @@ public class TriangleCollection {
     //  [(1, 5), (5, 12), (8, 5)]
     //  [(1, 5), (5, 12), (7, 5)]"
     public String triangleCollectionInfo() {
+      String info = "";
       for (Triangle triangle : collection) {
-        return triangle.triangleInfo() + "\n";
+        info += triangle.triangleInfo() + "\n";
       }
-      return null;
+      return info;
     }
   }
   

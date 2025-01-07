@@ -12,26 +12,35 @@ public class HorseBarn {
      *  @param numStalls  the number of stalls in the barn
      */
     public HorseBarn(int numStalls) {
-        /* to be implemented in part (a) */
+        stalls = new Horse[numStalls];
     }
 
     /** Assigns stalls to reference sampleHorses
      */
     public HorseBarn(Horse[] sampleStalls) {
-        /* to be implemented in part (a) */
+        stalls = sampleStalls;
     }
 
     /** Getter/accessor method for stalls
      *
      *  @return  a references to the stalls array
      */
-    // to be added in part (a)
+    public Horse[] getStalls() {
+        return stalls;
+    }
 
     /** Returns a string that shows which horses are in which stalls
      */
     public String horseBarnInfo() {
-        /* to be implemented in part (b) */
-        return "";
+        String info = "";
+        for (int i = 0; i < stalls.length; i++) {
+            if (stalls[i].getName() != null) {
+                info += "Stall " + i + ": name: " + stalls[i].getName() + ", weight: " + stalls[i].getWeight() + "\n";
+            } else {
+                info += "Stall " + i + ": empty\n";
+            }
+        }
+        return info;
     }
 
     /** Places a Horse into stalls at the index indicated by stall
@@ -42,7 +51,7 @@ public class HorseBarn {
      *  @param stall  the index of stalls to place the Horse
      */
     public void placeHorse(Horse horse, int stall) {
-        /* to be implemented in part (c) */
+        stalls[stall] = horse;
     }
 
     /** Returns the index of the stall that contains the horse with the specified name.
@@ -54,8 +63,12 @@ public class HorseBarn {
      *          -1 if no horse with the specified name is in the barn.
      */
     public int findHorseStall(String name) {
-        /* to be implemented in part (d) */
-        return 0;
+        for (int i = 0; i < stalls.length; i++) {
+            if (stalls[i].getName() == name) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     /** Consolidates the barn by moving horses so that the horses are in adjacent
@@ -64,6 +77,6 @@ public class HorseBarn {
      *  POSTCONDITION: The order of the horses is the same as before the consolidation.
      */
     public void consolidate() {
-        /* to be implemented in part (e) */
+        
     }
 }

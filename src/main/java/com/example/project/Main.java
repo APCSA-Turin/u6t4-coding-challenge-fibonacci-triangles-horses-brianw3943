@@ -7,7 +7,7 @@ public class Main {
         fibonaccis[1] = new Fibonacci(11);
         fibonaccis[2] = new Fibonacci(20);
         for (Fibonacci fibonacci : fibonaccis) {
-            System.out.println(fibonacci);
+            System.out.println(fibonacci.getSequence().length);
         }
     }
 }

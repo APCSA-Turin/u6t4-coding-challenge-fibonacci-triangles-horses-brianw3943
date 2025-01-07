@@ -19,9 +19,9 @@ public class Triangle {
       vertices[0].setX(newP1X);
       vertices[0].setY(newP1Y);
       vertices[1].setX(newP2X);
-      vertices[1].setX(newP2Y);
+      vertices[1].setY(newP2Y);
       vertices[2].setX(newP3X);
-      vertices[2].setX(newP3Y);
+      vertices[2].setY(newP3Y);
     }
     // Returns the perimeter of the Triangle
     // HINT: use the distanceTo method that you wrote in the Point class
