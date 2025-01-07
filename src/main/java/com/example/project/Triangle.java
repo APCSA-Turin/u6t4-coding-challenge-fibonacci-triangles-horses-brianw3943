@@ -7,6 +7,7 @@ public class Triangle {
     // Constructor: initializes the vertices array
     // to contain the three Point objects
     public Triangle(Point p1, Point p2, Point p3) {
+      vertices = new Point[3];
       vertices[0] = p1;
       vertices[1] = p2;
       vertices[2] = p3;
@@ -14,10 +15,13 @@ public class Triangle {
     public Point[] getVertices() {
       return vertices;
     }
-    public void setVertices(Point newP1, Point newP2, Point newP3) {
-      vertices[0] = newP1;
-      vertices[1] = newP2;
-      vertices[2] = newP3;
+    public void setVertices(int newP1X, int newP1Y, int newP2X, int newP2Y, int newP3X, int newP3Y) {
+      vertices[0].setX(newP1X);
+      vertices[0].setY(newP1Y);
+      vertices[1].setX(newP2X);
+      vertices[1].setX(newP2Y);
+      vertices[2].setX(newP3X);
+      vertices[2].setX(newP3Y);
     }
     // Returns the perimeter of the Triangle
     // HINT: use the distanceTo method that you wrote in the Point class

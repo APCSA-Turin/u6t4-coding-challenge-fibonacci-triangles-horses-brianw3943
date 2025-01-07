@@ -14,6 +14,7 @@ public class Fibonacci {
       PRECONDITION: seqLen >= 2
     */
   public Fibonacci(int seqLen) {
+    sequence = new int[seqLen];
     sequence[0] = 0;
     sequence[1] = 1;
     for (int i = 2; i < seqLen; i++) {

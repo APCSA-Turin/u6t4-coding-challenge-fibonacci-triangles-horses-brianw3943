@@ -4,6 +4,8 @@ public class TriangleCollection {
 
     // array of Triangles
     private Triangle[] collection;
+    private int startX;
+    private int startY;
   
     // Constructor: initialize collection array with the number of
     // Triangle objects specified by numTriangles, with the first
@@ -28,6 +30,9 @@ public class TriangleCollection {
   
     // PRECONDITION: numTriangles >= 2
     public TriangleCollection(int numTriangles, int startX, int startY) {
+      collection = new Triangle[numTriangles];
+      this.startX = startX;
+      this.startY = startY;
       for (int i = 0; i < numTriangles; i++) {
         collection[i] = new Triangle(new Point(-startX, 0), new Point(0, startY), new Point(startX - i, 0));
       }
@@ -48,7 +53,7 @@ public class TriangleCollection {
     // ADD GETTER AND SETTER METHODS TO OTHER CLASSES AS NECESSARY
     public void shiftTriangles(int increment) {
       for (int i = 0; i < collection.length; i++) {
-        collection[i].setVertices(new Point(Point.set + increment, ), , );
+        collection[i].setVertices(-startX + 3, 3, 3, startY + 3, startX - i + 3, 3);
       }
     }
   
@@ -61,7 +66,10 @@ public class TriangleCollection {
     //  [(1, 5), (5, 12), (8, 5)]
     //  [(1, 5), (5, 12), (7, 5)]"
     public String triangleCollectionInfo() {
-      /* IMPLEMENT ME */
+      for (Triangle triangle : collection) {
+        return triangle.triangleInfo() + "\n";
+      }
+      return null;
     }
   }
   
