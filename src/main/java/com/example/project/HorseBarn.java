@@ -64,8 +64,10 @@ public class HorseBarn {
      */
     public int findHorseStall(String name) {
         for (int i = 0; i < stalls.length; i++) {
-            if (stalls[i].getName() == name) {
-                return i;
+            if (stalls[i] != null) {
+                if (stalls[i].getName() == name) {
+                    return i;
+                }
             }
         }
         return -1;
@@ -77,6 +79,28 @@ public class HorseBarn {
      *  POSTCONDITION: The order of the horses is the same as before the consolidation.
      */
     public void consolidate() {
-        
+        int j = 1;
+        for (int i = 0; i < stalls.length; i++) {
+            if(i+j < stalls.length) {
+                if (stalls[i] == null) {
+                    j = 1;
+                    if (stalls[i+j] != null) {
+                        stalls[i] = stalls[i+j];
+                        stalls[i+j] = null;
+                    } else {
+                        j++;
+                        while (j > 1 && stalls[i+j-1] == null && i+j < stalls.length) {
+                            if (stalls[i+j] != null) {
+                                stalls[i] = stalls[i+j];
+                                stalls[i+j] = null;
+                                j = 1;
+                            } else {
+                                j++;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
